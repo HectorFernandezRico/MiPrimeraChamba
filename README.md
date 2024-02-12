@@ -1,0 +1,2 @@
+# MiPrimeraChamba
+Doko ni itatte
