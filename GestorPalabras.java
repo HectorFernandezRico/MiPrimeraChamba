@@ -3,37 +3,20 @@ package com.mycompany.miprimerachamba;
 import java.text.Normalizer;
 import java.util.*;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
  *
- * @author dev
+ * @author Enrique, Saúl y Héctor </3 .
+ *
  */
+
 public class GestorPalabras {
 
     public boolean esPalindromo(String palabra) {
-        String palabraFormateada = palabra.replaceAll("\\s+", "").toLowerCase(); //Pasa todo a minusculas (No tiene tilde por si acaso <3)
+        String palabraFormateada = palabra.replaceAll("\\s+", "").toLowerCase(); //Pasa todo a minusculas (No tiene tilde por si acaso <3).
         String palabraSinAcento;
-//        String[] palabrasCambiar; //Inicializamos Array para cambiar las vocales distintas por normales
-//        String[] vocales = new String[5]; //Inicializamos Array con 5 posiciones, de cada vocal
-//        vocales[0]="a";
-//        vocales[1]="e";
-//        vocales[2]="i";
-//        vocales[3]="o";
-//        vocales[4]="u";
-//        String[] vocalesRaras = {"í", "ì", "ï"};
-//        palabrasCambiar = palabraFormateada.split("");
-//        for (int letra = 0; letra < palabrasCambiar.length; letra++) {
-//            if (palabrasCambiar[letra].equalsIgnoreCase("í") || palabrasCambiar[letra].equalsIgnoreCase("ì") || palabrasCambiar[letra].equalsIgnoreCase("ï")) {
-//                palabrasCambiar[letra] = "i";
-//            }
-//        }
-
-       palabraSinAcento = skipearAcentos(palabraFormateada);
+        palabraSinAcento = skipearAcentos(palabraFormateada); //Añadimos un método para poder hacer palíndromos con palabas con acento <3.
         for (int i = 0; i < palabraSinAcento.length() / 2; i++) {
-            if (palabraSinAcento.charAt(i) != palabraSinAcento.charAt(palabraSinAcento.length() - i - 1)) {
+            if (palabraSinAcento.charAt(i) != palabraSinAcento.charAt(palabraSinAcento.length() - i - 1)) { //Se comprueba si es palíndromo o no <3.
                 return false;
             }
         }
@@ -42,9 +25,11 @@ public class GestorPalabras {
 
     public int contarVocales(String palabra) {
         int contador = 0;
-        for (int i = 0; i < palabra.length(); i++) {
-            char caracter = Character.toLowerCase(palabra.charAt(i));
-            if (caracter != 'a' && caracter != 'e' && caracter != 'i' && caracter != 'o' && caracter != 'u') {
+        String tomie = skipearAcentos(palabra); //Inicializamos este método para contar vocales con acentos a vocales normales ☝🤓.
+        for (int i = 0; i < tomie.length(); i++) { //Cambiamos palabra.length por tomie.length ya que lo metimos ahí ☝🤓.
+
+            char caracter = Character.toLowerCase(tomie.charAt(i));
+            if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u') {  //Cambiamos el != por == parea que cuente solo las vocales, a parte tambien cambiamos los && por || para que sean solo las vocales ☝🤓.
                 contador++;
             }
         }
