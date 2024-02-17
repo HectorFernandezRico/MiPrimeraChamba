@@ -23,19 +23,18 @@ public class GestorPalabras {
         return true;
     }
 
-    public int contarVocales(String palabra) {
-        int contador = 0;
-        String tomie = skipearAcentos(palabra); //Inicializamos este método para contar vocales con acentos a vocales normales ☝🤓.
-        for (int i = 0; i < tomie.length(); i++) { //Cambiamos palabra.length por tomie.length ya que lo metimos ahí ☝🤓.
-
-            char caracter = Character.toLowerCase(tomie.charAt(i));
+       public int contarVocales(String palabra) {
+            int contador = 0;
+            for (int i = 0; i < palabra.length(); i++) {
+                char caracter = Character.toLowerCase(palabra.charAt(i));
                 if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u'){
-////Cambiamos el != por == para que cuente solo las vocales, a parte tambien cambiamos los && por || para que sean solo las vocales ☝🤓.  
-                contador++;
+////Cambiamos el != por == para que cuente solo las vocales, a parte tambien cambiamos los && por || para que sean solo las vocales ☝🤓.                  
+                    contador++;
+                }
             }
+            return contador;
         }
-        return contador;
-    }
+
 
     public String invertirPalabra(String palabra) {
         StringBuilder resultado = new StringBuilder();
