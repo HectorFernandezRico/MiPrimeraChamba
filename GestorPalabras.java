@@ -29,7 +29,8 @@ public class GestorPalabras {
         for (int i = 0; i < tomie.length(); i++) { //Cambiamos palabra.length por tomie.length ya que lo metimos ahí ☝🤓.
 
             char caracter = Character.toLowerCase(tomie.charAt(i));
-            if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u') {  //Cambiamos el != por == parea que cuente solo las vocales, a parte tambien cambiamos los && por || para que sean solo las vocales ☝🤓.
+                if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u'){
+////Cambiamos el != por == para que cuente solo las vocales, a parte tambien cambiamos los && por || para que sean solo las vocales ☝🤓.  
                 contador++;
             }
         }
